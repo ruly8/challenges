@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  target-site:
+    build:
+      context: ./target-site
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+
+  admin-bot:
+    build:
+      context: ./admin-bot
+      dockerfile: Dockerfile
+    network_mode: "host"
