@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <h2>Set your EMail</h2>
+    <form method="POST">
+        <label for="mail">EMail:</label>
+        <input type="text" name="mail" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Your EMail</h2>
+    <p>
+        <li>{{ mail|safe }}</li> 
+    </p>
+        <h2> Your API Key</h2>
+        <p>{{ apikey }}</p>
+</body>
+</html>
+
